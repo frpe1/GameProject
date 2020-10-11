@@ -37,10 +37,18 @@ int main(int argc, char** argv) {
 
 	std::cout << v4.normalized().ToString();
 
-	Vector3 u = Vector3::Scale(Vector3::up, v1); //  +v3;
-	v1.Scale(v2);
-	
+	Vector3 s = Vector3(0, -1, 1);
+	Vector3 t = Vector3::Abs(s);
+	std::cout << t.ToString();
+
+	float q = Vector3::Distance(s, t);
+	std::cout << q << std::endl;
+
+	Vector3 u = v1.inverse();
 	std::cout << u.ToString();
+
+	Vector3 v = Vector3::Inverse(v1);
+	std::cout << v4.normalized().ToString();
 
 	return 0;
 }

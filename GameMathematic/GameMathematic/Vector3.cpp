@@ -21,6 +21,10 @@ Vector3::Vector3(Vector3 const& other) {
     }
 }
 
+
+// =================================================================================== //
+
+
 // overloaded assignment operator
 Vector3& Vector3::operator=(Vector3 const& V) {
     (*this).x = V.x;
@@ -51,12 +55,14 @@ Vector3 Vector3::operator^(const float& f) const {
     return Vector3(powf(x, f), powf(y, f), powf(z, f));
 }
 
-
-
 // OBS scalar product!
 float Vector3::operator*(Vector3 const& V) const {
     return (x * V.x) + (y * V.y) + (z * V.z);
 }
+
+
+// =================================================================================== //
+
 
 
 void Vector3::operator+=(Vector3 const& V) {
@@ -124,6 +130,8 @@ bool Vector3::operator<(const float& f) const {
 }
 
 
+// =================================================================================== //
+
 
 float Vector3::magnitude() {
     return sqrtf(x * x + y * y + z * z);
@@ -144,7 +152,7 @@ Vector3 Vector3::normalized() {
     return r;
 }
 
-Vector3& Vector3::inverse() {
+Vector3 Vector3::inverse() {
     Vector3 r(-x, -y, -z);
     return r;
 }
@@ -157,10 +165,10 @@ void Vector3::Scale(Vector3 const& V) {
 
 
 
-Vector3& Vector3::Abs(Vector3 const& V) {
-    Vector3 r = Vector3(fabsf(V.x), fabsf(V.y), fabsf(V.z));
+// =================================================================================== //
 
-    return r;
+Vector3 Vector3::Abs(Vector3 const& V) {
+    return Vector3(fabsf(V.x), fabsf(V.y), fabsf(V.z));
 }
 
 float Vector3::Dot(Vector3 const& V, Vector3 const& U) {

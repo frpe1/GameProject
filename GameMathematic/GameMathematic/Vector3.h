@@ -83,7 +83,7 @@ public:
     /// Return the inverse of this vector
     /// </summary>
     /// <returns></returns>
-    Vector3& inverse();
+    Vector3 inverse();
 
     /// <summary>
     /// Multiplies every component of this vector by the same component of scale.
@@ -99,7 +99,7 @@ public:
     /// </summary>
     /// <param name="V"></param>
     /// <returns></returns>
-    static Vector3& Abs(Vector3 const& V);
+    static Vector3 Abs(Vector3 const& V);
 
     /// <summary>
     /// Scalar product
