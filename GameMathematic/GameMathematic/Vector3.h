@@ -117,10 +117,10 @@ public:
     /// <param name="V"></param>
     /// <returns></returns>
     static float Magnitude(Vector3 const& V);
-    static Vector3 Normalize(Vector3 const& V);
-    static Vector3& Lerp(Vector3 const& V, Vector3 const& U, float t);
+    static Vector3 const Normalize(Vector3 const& V);
+    static Vector3 const Lerp(Vector3 const& V, Vector3 const& U, float t);
     static Vector3& Slerp(Vector3 const& V, Vector3 const& U, float t);
-    static Vector3& MoveTowards(Vector3 const& current, Vector3 const& target, float maxDistanceDelta);
+    static Vector3 const MoveTowards(Vector3 const& current, Vector3 const& target, float maxDistanceDelta);
     
     /// <summary>
     /// Multiples two vectors component-wise
@@ -128,8 +128,8 @@ public:
     /// <param name="V"></param>
     /// <param name="U"></param>
     /// <returns></returns>
-    static Vector3& Scale(Vector3 const& V, Vector3 const& U); // (ex (1,2,3) * (2,3,4) = (2,6,12))
-    static Vector3& Inverse(Vector3 const& V);
+    static Vector3 const Scale(Vector3 const& V, Vector3 const& U); // (ex (1,2,3) * (2,3,4) = (2,6,12))
+    static Vector3 const Inverse(Vector3 const& V);
     
     // Feature: more methods to implement
     //static Vector3& Project(Vector3 const& V, Vector3& normal);

@@ -196,14 +196,14 @@ float Vector3::Magnitude(Vector3 const& V) {
 }
 
 
-Vector3 Vector3::Normalize(Vector3 const& V) {
+Vector3 const Vector3::Normalize(Vector3 const& V) {
     Vector3 r(V.x, V.y, V.z);
     r = r.normalized();
     return r;
 }
 
 
-Vector3& Vector3::Lerp(Vector3 const& V, Vector3 const& U, float t) {
+Vector3 const Vector3::Lerp(Vector3 const& V, Vector3 const& U, float t) {
     Vector3 r;
 
     float v = 0.0f;
@@ -230,7 +230,7 @@ Vector3& Vector3::Slerp(Vector3 const& V, Vector3 const& U, float t) {
 }
 
 
-Vector3& Vector3::MoveTowards(Vector3 const& current, Vector3 const& target, float maxDistanceDelta) {
+Vector3 const Vector3::MoveTowards(Vector3 const& current, Vector3 const& target, float maxDistanceDelta) {
     Vector3 r;
 
     Vector3::Abs(target - current);
@@ -250,7 +250,7 @@ Vector3& Vector3::MoveTowards(Vector3 const& current, Vector3 const& target, flo
 }
 
 
-Vector3& Vector3::Scale(Vector3 const& V, Vector3 const& U) {
+Vector3 const Vector3::Scale(Vector3 const& V, Vector3 const& U) {
     Vector3 r;
 
     r.x = (V.x * U.x);
@@ -260,7 +260,7 @@ Vector3& Vector3::Scale(Vector3 const& V, Vector3 const& U) {
     return r;
 }
 
-Vector3& Vector3::Inverse(Vector3 const& V) {
+Vector3 const Vector3::Inverse(Vector3 const& V) {
     Vector3 r;
 
     r.x = -V.x;

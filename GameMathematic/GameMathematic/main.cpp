@@ -7,6 +7,8 @@ int main(int argc, char** argv) {
 
 	Vector3 v1 = Vector3::forward;
 	Vector3 v2 = v1.forward;
+	Vector3 v3 = Vector3::up;
+
 	/*
 	Vector3 v3 = v1 + v2;
 
@@ -31,10 +33,14 @@ int main(int argc, char** argv) {
 	std::cout << transform->Up().ToString();
 	*/
 
-	Vector3 v3 = v1 + v2 * 5 + Vector3(1,0,1) + Vector3::up;
+	Vector3 v4 = v1 + v2 * 5 + Vector3(1,0,1) + Vector3::up;
 
-	std::cout << v3.normalized().ToString();
+	std::cout << v4.normalized().ToString();
 
+	Vector3 u = Vector3::Scale(Vector3::up, v1); //  +v3;
+	v1.Scale(v2);
+	
+	std::cout << u.ToString();
 
 	return 0;
 }
