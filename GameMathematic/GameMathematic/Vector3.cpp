@@ -67,12 +67,29 @@ void Vector3::operator-=(Vector3 const& V) {
     z -= V.z;
 }
 
+void Vector3::operator+=(const float& f) {
+    x += f;
+    y += f;
+    z += f;
+}
+
+void Vector3::operator-=(const float& f) {
+    x -= f;
+    y -= f;
+    z -= f;
+}
+
+void Vector3::operator*=(const float& f) {
+    x *= f;
+    y *= f;
+    z *= f;
+}
+
 void Vector3::operator/=(const float& f) {
     x /= f;
     y /= f;
     z /= f;
 }
-
 
 
 bool Vector3::operator==(Vector3 const& V) const {

@@ -54,6 +54,9 @@ public:
 
     void  operator+=(Vector3 const& V);
     void  operator-=(Vector3 const& V);
+    void  operator+=(const float& f);
+    void  operator-=(const float& f);
+    void  operator*=(const float& f);
     void  operator/=(const float& f);
 
     bool  operator==(Vector3 const& V) const;
