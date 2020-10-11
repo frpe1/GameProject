@@ -47,6 +47,12 @@ Vector3 Vector3::operator*(const float& f) const {
     return Vector3(x * f, y * f, z * f);
 }
 
+Vector3 Vector3::operator^(const float& f) const {
+    return Vector3(powf(x, f), powf(y, f), powf(z, f));
+}
+
+
+
 // OBS scalar product!
 float Vector3::operator*(Vector3 const& V) const {
     return (x * V.x) + (y * V.y) + (z * V.z);
@@ -142,6 +148,13 @@ Vector3& Vector3::inverse() {
     Vector3 r(-x, -y, -z);
     return r;
 }
+
+void Vector3::Scale(Vector3 const& V) {
+    x *= V.x;
+    y *= V.y;
+    z *= V.z;
+}
+
 
 
 Vector3& Vector3::Abs(Vector3 const& V) {

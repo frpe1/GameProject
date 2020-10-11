@@ -29,10 +29,6 @@ public:
 
     ~Vector3() {}
 
-    float magnitude();
-    Vector3 normalized();
-    Vector3& inverse();
-
     // Accessors
     // float X() const { return x; }
     // float Y() const { return y; }
@@ -44,6 +40,7 @@ public:
     Vector3  operator-(Vector3 const& V) const;
     Vector3  operator/(const float& f) const;
     Vector3  operator*(const float& f) const;
+    Vector3  operator^(const float& f) const;
 
     /// <summary>
     /// Scalar product
@@ -67,6 +64,33 @@ public:
     bool  operator>(const float& f) const;
     bool  operator<=(const float& f) const;
     bool  operator<(const float& f) const;
+
+
+
+    /// <summary>
+    /// Return length of this vector
+    /// </summary>
+    /// <returns></returns>
+    float magnitude();
+
+    /// <summary>
+    /// Returns this vector with a magnitude of 1
+    /// </summary>
+    /// <returns></returns>
+    Vector3 normalized();
+
+    /// <summary>
+    /// Return the inverse of this vector
+    /// </summary>
+    /// <returns></returns>
+    Vector3& inverse();
+
+    /// <summary>
+    /// Multiplies every component of this vector by the same component of scale.
+    /// </summary>
+    /// <param name="V"></param>
+    void Scale(Vector3 const& V);
+
 
 
     /// <summary>
@@ -97,6 +121,13 @@ public:
     static Vector3& Lerp(Vector3 const& V, Vector3 const& U, float t);
     static Vector3& Slerp(Vector3 const& V, Vector3 const& U, float t);
     static Vector3& MoveTowards(Vector3 const& current, Vector3 const& target, float maxDistanceDelta);
+    
+    /// <summary>
+    /// Multiples two vectors component-wise
+    /// </summary>
+    /// <param name="V"></param>
+    /// <param name="U"></param>
+    /// <returns></returns>
     static Vector3& Scale(Vector3 const& V, Vector3 const& U); // (ex (1,2,3) * (2,3,4) = (2,6,12))
     static Vector3& Inverse(Vector3 const& V);
     
