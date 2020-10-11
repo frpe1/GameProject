@@ -1,9 +1,2 @@
 ﻿  main.cpp
-  Mathf.cpp
-  Quaternion.cpp
-  Transform.cpp
-  Vector3.cpp
-  Generating Code...
-C:\Users\utopiafx\Documents\AppDev\templates\PROJECTS\GameForC++\GameMathematic\GameMathematic\Vector3.cpp(197): warning C4172: returning address of local variable or temporary: r
-C:\Users\utopiafx\Documents\AppDev\templates\PROJECTS\GameForC++\GameMathematic\GameMathematic\Vector3.cpp(237): warning C4172: returning address of local variable or temporary: r
   GameMathematic.vcxproj -> C:\Users\utopiafx\Documents\AppDev\templates\PROJECTS\GameForC++\GameMathematic\Debug\GameMathematic.exe

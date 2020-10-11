@@ -6,26 +6,29 @@
 
 #include "Vector3.h"
 
+
 class Transform
 {
+	/*
 	public:
 		Transform *parent; // Reference to parent Transform
-		Vector3 position;
-		Vector3 rotation; // TODO: Make it to Quaternion
+		Vector3<float> position;
+		Vector3<float> rotation; // TODO: Make it to Quaternion
 
 		// Accessors
-		Vector3 Forward();
-		Vector3 Up();
-		Vector3 Right();
+		Vector3<float> Forward();
+		Vector3<float> Up();
+		Vector3<float> Right();
 
 		Transform();
 		~Transform();
 
 		void Update(float dt);
 	protected:
-		Vector3 _forward;
-		Vector3 _up;
-		Vector3 _right;
+		Vector3<float> _forward;
+		Vector3<float> _up;
+		Vector3<float> _right;
+		*/
 };
 
 

@@ -1,38 +1,23 @@
 #include "Vector3.h"
 
-Vector3 const Vector3::zero(0.0f, 0.0f, 0.0f);
-Vector3 const Vector3::one(1.0f, 1.0f, 1.0f);
-Vector3 const Vector3::back(0.0f, 0.0f, -1.0f);
-Vector3 const Vector3::forward(0.0f, 0.0f, 1.0f);
-Vector3 const Vector3::left(-1.0f, 0.0f, 0.0f);
-Vector3 const Vector3::right(1.0f, 0.0f, 0.0f);
-Vector3 const Vector3::up(0.0f, 1.0f, 0.0f);
-Vector3 const Vector3::down(0.0f, -1.0f, 0.0f);
-
-
-Vector3::Vector3() { x = 0.0f; y = 0.0f; z = 0.0f; }
-Vector3::Vector3(float x, float y, float z) { this->x = x; this->y = y; this->z = z; }
-
-Vector3::Vector3(Vector3 const& other) {
-    if (&other != this) {
-        this->x = other.x;
-        this->y = other.y;
-        this->z = other.z;
-    }
-}
-
-
 // =================================================================================== //
-
-
+/*
+extern "C++" {
+    template<typename T>
+    Vector3<T> Vector3<T>::operator-() const { return Vector3<T>(-x, -y, -z); }
+}
+*/
+/*
 // overloaded assignment operator
-Vector3& Vector3::operator=(Vector3 const& V) {
+template<typename T>
+Vector3<T>& Vector3<T>::operator=(const Vector3<T>& V) {
     (*this).x = V.x;
     (*this).y = V.y;
     (*this).z = V.z;
 
     return (*this);
 }
+
 
 
 Vector3 Vector3::operator+(Vector3 const& V) const {
@@ -42,6 +27,8 @@ Vector3 Vector3::operator+(Vector3 const& V) const {
 Vector3 Vector3::operator-(Vector3 const& V) const {
     return Vector3(x - V.x, y - V.y, z - V.z);
 }
+
+
 
 Vector3 Vector3::operator/(const float& f) const {
     return Vector3(x / f, y / f, z / f);
@@ -60,7 +47,7 @@ float Vector3::operator*(Vector3 const& V) const {
     return (x * V.x) + (y * V.y) + (z * V.z);
 }
 
-
+/*
 // =================================================================================== //
 
 
@@ -278,9 +265,12 @@ Vector3 const Vector3::Inverse(Vector3 const& V) {
     return r;
 }
 
-
-std::string Vector3::ToString() {
+*/
+/*
+template<class T>
+std::string Vector3<T>::ToString() {
     std::stringstream ss;
-    ss << "(x: " << std::to_string(x) << " , y: " << std::to_string(y) + " , z: " << std::to_string(z) << ")\n";
+    ss << "(x: " << std::to_string((T)x) << " , y: " << std::to_string((T)y) + " , z: " << std::to_string((T)z) << ")\n";
     return ss.str();
 }
+*/
