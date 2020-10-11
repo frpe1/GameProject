@@ -9,7 +9,7 @@
 
 class Transform
 {
-	/*
+
 	public:
 		Transform *parent; // Reference to parent Transform
 		Vector3<float> position;
@@ -28,7 +28,7 @@ class Transform
 		Vector3<float> _forward;
 		Vector3<float> _up;
 		Vector3<float> _right;
-		*/
+		
 };
 
 

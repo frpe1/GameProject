@@ -1,6 +1,6 @@
 #include "Vector3.h"
 #include "Mathf.h"
-//#include "Transform.h"
+#include "Transform.h"
 #include "Quaternion.h"
 
 
@@ -71,6 +71,10 @@ int main(int argc, char** argv) {
 	Vector3f r = Vector3f::Scale(v4, v2);
 
 	std::cout << r.ToString();
+
+	Transform* transform = new Transform();
+
+	std::cout << transform->Up().ToString();
 
 	return 0;
 }

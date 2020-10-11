@@ -10,7 +10,7 @@
     /// <summary>
     /// Vector3 
     /// </summary>
-    extern "C++" template<class T>
+    template<class T>
     class Vector3 {
 
     public:
@@ -52,9 +52,9 @@
         Vector3<T>& operator=(const Vector3<T>& V);
         Vector3<T>  operator+(Vector3<T> const& V) const;
         Vector3<T>  operator-(Vector3<T> const& V) const;
-        Vector3<T>  operator/(const float& f) const;
-        Vector3<T>  operator*(const float& f) const;
-        Vector3<T>  operator^(const float& f) const;
+        Vector3<T>  operator/(const T& f) const;
+        Vector3<T>  operator*(const T& f) const;
+        Vector3<T>  operator^(const T& f) const;
        
         /// <summary>
         /// Scalar product
@@ -65,19 +65,19 @@
        
         void  operator+=(Vector3<T> const& V);
         void  operator-=(Vector3<T> const& V);
-        void  operator+=(const float& f);
-        void  operator-=(const float& f);
-        void  operator*=(const float& f);
-        void  operator/=(const float& f);
+        void  operator+=(const T& f);
+        void  operator-=(const T& f);
+        void  operator*=(const T& f);
+        void  operator/=(const T& f);
 
         bool  operator==(Vector3<T> const& V) const;
         bool  operator!=(Vector3<T> const& V) const;
 
         // TODO: more comp operators needed for two vectors
-        bool  operator>=(const float& f) const;
-        bool  operator>(const float& f) const;
-        bool  operator<=(const float& f) const;
-        bool  operator<(const float& f) const;
+        bool  operator>=(const T& f) const;
+        bool  operator>(const T& f) const;
+        bool  operator<=(const T& f) const;
+        bool  operator<(const T& f) const;
 
        
 
@@ -85,7 +85,7 @@
         /// Return length of this vector
         /// </summary>
         /// <returns></returns>
-        float magnitude();
+        T magnitude();
 
         /// <summary>
         /// Returns this vector with a magnitude of 1
@@ -121,8 +121,8 @@
         /// <param name="V"></param>
         /// <param name="U"></param>
         /// <returns></returns>
-        static float Dot(Vector3<T> const& V, Vector3<T> const& U);
-        static float Distance(Vector3<T> const& V, Vector3<T> const& U);
+        static T Dot(Vector3<T> const& V, Vector3<T> const& U);
+        static T Distance(Vector3<T> const& V, Vector3<T> const& U);
         static Vector3<T>& Cross(Vector3<T> const& V, Vector3<T> const& U);
 
         /// <summary>
@@ -130,11 +130,11 @@
         /// </summary>
         /// <param name="V"></param>
         /// <returns></returns>
-        static float Magnitude(Vector3<T> const& V);
+        static T Magnitude(Vector3<T> const& V);
         static Vector3<T> const Normalize(Vector3<T> const& V);
-        static Vector3<T> const Lerp(Vector3<T> const& V, Vector3<T> const& U, float t);
-        static Vector3<T>& Slerp(Vector3<T> const& V, Vector3<T> const& U, float t);
-        static Vector3<T> const MoveTowards(Vector3<T> const& current, Vector3<T> const& target, float maxDistanceDelta);
+        static Vector3<T> const Lerp(Vector3<T> const& V, Vector3<T> const& U, T t);
+        static Vector3<T>& Slerp(Vector3<T> const& V, Vector3<T> const& U, T t);
+        static Vector3<T> const MoveTowards(Vector3<T> const& current, Vector3<T> const& target, T maxDistanceDelta);
 
         /// <summary>
         /// Multiples two vectors component-wise
@@ -202,17 +202,17 @@
 
 
     template<typename T>
-    Vector3<T> Vector3<T>::operator/(const float& f) const {
+    Vector3<T> Vector3<T>::operator/(const T& f) const {
         return Vector3<T>(x / f, y / f, z / f);
     }
 
     template<typename T>
-    Vector3<T> Vector3<T>::operator*(const float& f) const {
+    Vector3<T> Vector3<T>::operator*(const T& f) const {
         return Vector3<T>(x * f, y * f, z * f);
     }
 
     template<typename T>
-    Vector3<T> Vector3<T>::operator^(const float& f) const {
+    Vector3<T> Vector3<T>::operator^(const T& f) const {
         return Vector3<T>(powf(x, f), powf(y, f), powf(z, f));
     }
 
@@ -241,25 +241,25 @@
         z -= V.z;
     }
     template<typename T>
-    void Vector3<T>::operator+=(const float& f) {
+    void Vector3<T>::operator+=(const T& f) {
         x += f;
         y += f;
         z += f;
     }
     template<typename T>
-    void Vector3<T>::operator-=(const float& f) {
+    void Vector3<T>::operator-=(const T& f) {
         x -= f;
         y -= f;
         z -= f;
     }
     template<typename T>
-    void Vector3<T>::operator*=(const float& f) {
+    void Vector3<T>::operator*=(const T& f) {
         x *= f;
         y *= f;
         z *= f;
     }
     template<typename T>
-    void Vector3<T>::operator/=(const float& f) {
+    void Vector3<T>::operator/=(const T& f) {
         x /= f;
         y /= f;
         z /= f;
@@ -275,26 +275,26 @@
         return (x != V.x) && (y != V.y) && (z != V.z);
     }
     template<typename T>
-    bool Vector3<T>::operator>=(const float& f) const {
+    bool Vector3<T>::operator>=(const T& f) const {
         return (x >= f) && (y >= f) && (z >= f);
     }
     template<typename T>
-    bool Vector3<T>::operator<=(const float& f) const {
+    bool Vector3<T>::operator<=(const T& f) const {
         return (x <= f) && (y <= f) && (z <= f);
     }
     template<typename T>
-    bool Vector3<T>::operator>(const float& f) const {
+    bool Vector3<T>::operator>(const T& f) const {
         return (x > f) && (y > f) && (z > f);
     }
     template<typename T>
-    bool Vector3<T>::operator<(const float& f) const {
+    bool Vector3<T>::operator<(const T& f) const {
         return (x < f) && (y < f) && (z < f);
     }
 
     // =================================================================================== //
 
     template<typename T>
-    float Vector3<T>::magnitude() {
+    T Vector3<T>::magnitude() {
         return sqrtf(x * x + y * y + z * z);
     }
     template<typename T>
@@ -304,7 +304,7 @@
 
         float d = this->magnitude();
         if (d > 0.00000f) {
-            float s = 1 / d;
+            T s = 1 / d;
             r.x = x * s;
             r.y = y * s;
             r.z = z * s;
@@ -330,12 +330,12 @@
         return Vector3<T>(fabsf(V.x), fabsf(V.y), fabsf(V.z));
     }
     template<typename T>
-    float Vector3<T>::Dot(Vector3<T> const& V, Vector3<T> const& U) {
+    T Vector3<T>::Dot(Vector3<T> const& V, Vector3<T> const& U) {
         return (V.x * U.x) + (V.x * U.y) + (V.z * U.z);
     }
 
     template<typename T>
-    float Vector3<T>::Distance(Vector3<T> const& V, Vector3<T> const& U) {
+    T Vector3<T>::Distance(Vector3<T> const& V, Vector3<T> const& U) {
         Vector3<T> r;
 
         r.x = (V.x - U.x) * (V.x - U.x);
@@ -356,7 +356,7 @@
         return r;
     }
     template<typename T>
-    float Vector3<T>::Magnitude(Vector3<T> const& V) {
+    T Vector3<T>::Magnitude(Vector3<T> const& V) {
         Vector3<T> r = V;
 
         return r.magnitude();
@@ -370,10 +370,10 @@
     }
 
     template<typename T>
-    Vector3<T> const Vector3<T>::Lerp(Vector3<T> const& V, Vector3<T> const& U, float t) {
+    Vector3<T> const Vector3<T>::Lerp(Vector3<T> const& V, Vector3<T> const& U, T t) {
         Vector3<T> r;
 
-        float v = 0.0f;
+        T v = 0.0f;
 
         if (t < 0.0f)
             v = 0.0f;
@@ -390,14 +390,14 @@
     }
 
     template<typename T>
-    Vector3<T>& Vector3<T>::Slerp(Vector3<T> const& V, Vector3<T> const& U, float t) {
+    Vector3<T>& Vector3<T>::Slerp(Vector3<T> const& V, Vector3<T> const& U, T t) {
         Vector3<T> r;
         // TODO: yet to be implemented
         return r;
     }
 
     template<typename T>
-    Vector3<T> const Vector3<T>::MoveTowards(Vector3<T> const& current, Vector3<T> const& target, float maxDistanceDelta) {
+    Vector3<T> const Vector3<T>::MoveTowards(Vector3<T> const& current, Vector3<T> const& target, T maxDistanceDelta) {
         Vector3<T> r;
 
         Vector3<T>::Abs(target - current);
@@ -407,7 +407,7 @@
             return r;
         }
 
-        float sign = Vector3<T>::Abs(target - current) >= 0.0f ? 1.0f : -1.0f;
+        T sign = Vector3<T>::Abs(target - current) >= 0.0f ? 1.0f : -1.0f;
 
         Vector3<T> t = Vector3<T>::Abs(target - current);
 
