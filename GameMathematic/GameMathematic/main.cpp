@@ -1,7 +1,7 @@
 #include "Vector3.h"
 #include "Mathf.h"
 #include "Transform.h"
-
+#include "Quaternion.h"
 
 int main(int argc, char** argv) {
 
@@ -53,6 +53,10 @@ int main(int argc, char** argv) {
 	Vector3 Z(5.0f);
 
 	std::cout << Z.ToString();
+
+	Quaternion q1 = Quaternion();
+
+	std::cout << q1.ToString();
 
 	return 0;
 }

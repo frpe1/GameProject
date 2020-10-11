@@ -1,9 +1,10 @@
 #pragma once
-#include "Vector3.h"
+
 
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
+#include "Vector3.h"
 
 class Transform
 {

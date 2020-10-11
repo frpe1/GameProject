@@ -1,9 +1,11 @@
 #pragma once
 
-#include <cmath>
+
 
 #ifndef MATHF_H
 #define MATHF_H
+
+#include <cmath>
 
 class Mathf
 {
