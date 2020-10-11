@@ -50,5 +50,9 @@ int main(int argc, char** argv) {
 	Vector3 v = Vector3::Inverse(v1);
 	std::cout << v4.normalized().ToString();
 
+	Vector3 Z(5.0f);
+
+	std::cout << Z.ToString();
+
 	return 0;
 }
