@@ -7,6 +7,7 @@
 #include <string>
 #include <sstream>
 
+namespace Game {
     /// <summary>
     /// Vector3 
     /// </summary>
@@ -55,14 +56,14 @@
         Vector3<T>  operator/(const T& f) const;
         Vector3<T>  operator*(const T& f) const;
         Vector3<T>  operator^(const T& f) const;
-       
+
         /// <summary>
         /// Scalar product
         /// </summary>
         /// <param name="V"></param>
         /// <returns></returns>
         float operator*(Vector3<T> const& V) const; // scalar product
-       
+
         void  operator+=(Vector3<T> const& V);
         void  operator-=(Vector3<T> const& V);
         void  operator+=(const T& f);
@@ -79,7 +80,7 @@
         bool  operator<=(const T& f) const;
         bool  operator<(const T& f) const;
 
-       
+
 
         /// <summary>
         /// Return length of this vector
@@ -105,7 +106,7 @@
         /// <param name="V"></param>
         void Scale(Vector3<T> const& V);
 
-        
+
 
         /// <summary>
         /// Take abs value of a vector and return the new vector with positive values only.
@@ -145,10 +146,11 @@
         static Vector3<T> const Scale(Vector3<T> const& V, Vector3<T> const& U); // (ex (1,2,3) * (2,3,4) = (2,6,12))
         static Vector3<T> const Inverse(Vector3<T> const& V);
 
+
         // Feature: more methods to implement
         //static Vector3& Project(Vector3 const& V, Vector3& normal);
         //static Vector3& RotateY(float angle);
-        
+
         std::string ToString() {
             std::stringstream ss;
             ss << "(x: " << std::to_string((T)x) << " , y: " << std::to_string((T)y) + " , z: " << std::to_string((T)z) << ")\n";
@@ -437,6 +439,8 @@
         return r;
     }
 
+
+
     // =================================================================================== //
 
     /// <summary>
@@ -459,6 +463,7 @@
     /// 
     /// </summary>
     //typedef Vector3<float> vec3ff;
+}
 
 
 #endif VECTOR3_H // VECTOR3_H

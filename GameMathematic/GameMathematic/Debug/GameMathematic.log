@@ -1,6 +1,17 @@
 ﻿  main.cpp
+C:\Users\utopiafx\Documents\AppDev\templates\PROJECTS\GameForC++\GameMathematic\GameMathematic\Time.h(34,99): warning C4244: 'return': conversion from '_Rep' to 'long', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
   Mathf.cpp
   Quaternion.cpp
+  Time.cpp
+C:\Users\utopiafx\Documents\AppDev\templates\PROJECTS\GameForC++\GameMathematic\GameMathematic\Time.h(34,99): warning C4244: 'return': conversion from '_Rep' to 'long', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
   Transform.cpp
   Vector3.cpp
   Generating Code...

@@ -2,7 +2,9 @@
 #include "Mathf.h"
 #include "Transform.h"
 #include "Quaternion.h"
+#include "Time.h"
 
+using namespace Game;
 
 int main(int argc, char** argv) {
 	
@@ -76,5 +78,17 @@ int main(int argc, char** argv) {
 
 	std::cout << transform->Up().ToString();
 
+	Vector3f s = Vector3f::Lerp(Vector3f(0, 0, 0), Vector3f(2, 5, 5), 0.35f);
+
+	std::cout << s.ToString();
+	
+	std::cout << Time::deltaTime() << std::endl;
+	std::cout << Time::deltaTime() << std::endl;
+
+	int j = 0;
+	for (int i = 0; i < 1000000000; i++) {
+		j = j + 1;
+	}
+	std::cout << Time::deltaTime() << std::endl;
 	return 0;
 }

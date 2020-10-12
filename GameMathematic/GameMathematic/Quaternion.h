@@ -8,7 +8,8 @@
 
 #include "Vector3.h"
 
-class Quaternion {
+namespace Game {
+	class Quaternion {
 	public:
 		float x; // imaginary part
 		float y;
@@ -24,10 +25,11 @@ class Quaternion {
 		Quaternion  operator+(const Quaternion& V) const;
 		Quaternion  operator-(const Quaternion& V) const;
 		Quaternion  operator*(const Quaternion& V) const;
-		Quaternion& operator*=(const Quaternion & V);
+		Quaternion& operator*=(const Quaternion& V);
 
 		std::string ToString();
-};
+	};
+}
 
 
 
