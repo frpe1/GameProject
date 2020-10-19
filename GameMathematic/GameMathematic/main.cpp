@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include "Matrix4x4.h"
 #include "Mathf.h"
 #include "Transform.h"
 #include "Quaternion.h"
@@ -69,7 +70,7 @@ int main(int argc, char** argv) {
 	Vector3f u = Vector3f::one;
 	std::cout << (-v1 + u).ToString();
 	*/
-
+	/*
 	Vector3f r = Vector3f::Scale(v4, v2);
 
 	std::cout << r.ToString();
@@ -90,5 +91,12 @@ int main(int argc, char** argv) {
 		j = j + 1;
 	}
 	std::cout << Time::deltaTime() << std::endl;
+	
+	*/
+	Matrix4x4<float> m4x4 = Matrix4x4<float>::identity + Matrix4x4<float>(1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8);
+
+	std::cout << m4x4.ToString() << std::endl;
+
 	return 0;
+
 }
